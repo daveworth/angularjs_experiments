@@ -1,4 +1,4 @@
-# AngularJS Experiments with Shiny
+# AngularJS Experiments with Shiny New Toys
 
 # Overview
 
@@ -84,7 +84,7 @@ when you want the copy of a link to be "archive" in Slim you must put it on a
 separate line preceded by copy indicator such as `|` or `''`.  Haml is not aware
 of this attribute.
 
-##### Application Logic
+##### Application Logic - CoffeeScript
 
 Since we are discussing AngularJS and not Markdown template languages, we should
 emphasize the comparison between Javascript and CoffeeScript.  The Javascript
@@ -104,6 +104,18 @@ emitted JS read differently than you might expect (since there was only one
 the emitted code).
 
 At first glance the use of CoffeeScript is a clear win!
+
+##### Application Logic - CoffeeScript augmented by Underscore.js
+
+A second experiment was to include [Underscore.js](http://underscorejs.org/) in
+the project in order to use its iterators and functional idioms instead of using
+Angular's iterators such as `forEach`.  In order to isolate the
+CoffeeScript+Underscore change from any markup libraries.
+
+It feels like the archive method is much simpler while the use of `.value()` at
+the end of calls to `.chain(...)` is kind of unnatural in the definition of
+`remaining()`.  In the end, by indenting the chained methods inside of the calls
+to `.chain(...)`/`.value()` the readability of the system is increased.
 
 ##### Styling
 
