@@ -1,0 +1,14 @@
+# A sample Gemfile
+source "https://rubygems.org"
+
+gem 'guard'
+
+gem 'haml'
+gem 'guard-haml'
+
+gem 'slim'
+gem 'guard-slim'
+
+gem 'therubyracer'
+gem 'coffee-script'
+gem 'guard-coffeescript'

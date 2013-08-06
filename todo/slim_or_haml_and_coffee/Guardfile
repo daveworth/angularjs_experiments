@@ -1,0 +1,11 @@
+guard 'haml', input: "html" do
+  watch(/^.+(\.html\.haml)/)
+end
+
+guard 'slim', :slim => { :pretty => true } do
+  watch(%r'^.+\.slim$')
+end
+
+guard 'coffeescript', :bare => true, :input => ".", :output => "." do
+  watch(%r{(^.+\.coffee$)})
+end

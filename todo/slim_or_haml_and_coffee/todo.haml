@@ -1,0 +1,20 @@
+!!!
+%html{ng: {app: ""}}
+  %head
+    %script{src:"https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"}
+    %script{src:"todo.js"}
+    %link{rel:"stylesheet", href:"todo.css"}
+  %body
+    %h2 Todo
+    %div{"ng-controller" => "TodoCtrl"}
+      %span {{remaining()}} of {{todos.length}} remaining
+      [
+      %a{href: "", ng: {click: "archive()"}} archive
+      ]
+      %ul{class: "unstyled"}
+        %li{ng: {repeat: "todo in todos"}}
+          %input{type: "checkbox", ng: {model: "todo.done"}}
+            %span{class: "done-{{todo.done}}"}{{todo.text}}
+      %form{ ng: {submit: "addTodo()"} }
+        %input{type: "text", placeholder: "add new todo here", size: 30, ng: {model: "todoText"}}
+        %input{class: "btn-primary", type: :submit, value: "add"}
